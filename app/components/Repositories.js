@@ -2,6 +2,7 @@ var React = require('react-native');
 var Badge = require('./Badge');
 
 var Separator = require('./helpers/Separator');
+var Web_View = require('./helpers/Web_View') 
 
 var {
     View,
@@ -38,7 +39,12 @@ var styles = StyleSheet.create({
 
 class Repositories extends React.Component {
     openPage(url){
-        console.log('the item is', url)
+        console.log(url);
+        this.props.navigator.push({
+            component: Web_View,
+            title: 'web view',
+            passProps: {url}
+        });
     }
     render(){
         repos = this.props.repos;
@@ -48,7 +54,7 @@ class Repositories extends React.Component {
                 <View key={index}>
                     <View style={styles.rowContainer}>
                         <TouchableHighlight
-                            onpress={this.openPage.bind(this, repos[index].html_url)}
+                            onPress={this.openPage.bind(this, repos[index].html_url)}
                             underlayColor='transparent'   
                         >
                             <Text style={styles.name}>{repos[index].name}</Text>
