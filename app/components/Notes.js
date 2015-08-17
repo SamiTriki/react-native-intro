@@ -85,7 +85,7 @@ class Notes extends React.Component {
         return(
             <View>
                 <View style={styles.rowContainer}>
-                    <Text> {rowData}</Text>
+                    <Text> {rowData} </Text>
                 </View>
                 <Separator />
             </View>
@@ -115,7 +115,6 @@ class Notes extends React.Component {
         return (
             <View style={styles.container}>
                 <ListView
-                    style={styles.rowContainer}
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow}
                     renderHeader={() => <Badge userInfo={this.props.userInfo} /> } 

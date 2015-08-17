@@ -14,7 +14,7 @@ var api = {
         var url = `https://github-saver-sami.firebaseio.com/${username}.json`;
         return fetch(url).then((res) => res.json());    
     },
-    addNote(username){
+    addNote(username, note){
         username = username.toLowerCase().trim();
         var url = `https://github-saver-sami.firebaseio.com/${username}.json`;
         return fetch(url, {
