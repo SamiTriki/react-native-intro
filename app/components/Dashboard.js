@@ -82,7 +82,6 @@ class Dashboard extends React.Component{
             })
     }
     render() {
-        console.log('YOOOO',this.props.userInfo);
         return (
             <View style={styles.container}>
                 <Image source={{uri: this.props.userInfo.avatar_url }} style={styles.image}/>
